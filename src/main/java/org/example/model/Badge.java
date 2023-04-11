@@ -12,7 +12,15 @@ public class Badge {
 
     }
 
-    public Badge(String id,String name,Type type) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Badge(String id, String name, Type type) {
         this.name = name;
         this.type=type;
         this.id=id;
