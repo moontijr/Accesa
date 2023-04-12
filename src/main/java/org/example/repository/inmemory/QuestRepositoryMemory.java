@@ -10,6 +10,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * a simple Singleton class for Repository, that has the basic CRUD operations with the help of an ID, that takes care of Quests
+ */
+
 public class QuestRepositoryMemory implements QuestRepository {
     private static org.example.repository.inmemory.QuestRepositoryMemory single_instance=null;
 

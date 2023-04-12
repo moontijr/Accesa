@@ -6,6 +6,9 @@ import org.example.repository.RankingRepository;
 
 import java.util.ArrayList;
 
+/**
+ * a simple Singleton class for Repository, that has the basic CRUD operations with the help of an ID, that takes care of Rankings
+ */
 public class RankingRepositoryMemory implements RankingRepository {
 
     private static RankingRepositoryMemory single_instance = null;

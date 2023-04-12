@@ -1,9 +1,13 @@
 package org.example.model;
 
+/**
+ * a simple Badge class, each badge has an id, a name, and can be one of those 4 types (BRONZE, SILVER,GOLD, OR HOF)
+ */
 public class Badge {
     private String id;
     private String name;
     private Type type;
+
     public enum Type {
         BRONZE,
         SILVER,
@@ -22,8 +26,8 @@ public class Badge {
 
     public Badge(String id, String name, Type type) {
         this.name = name;
-        this.type=type;
-        this.id=id;
+        this.type = type;
+        this.id = id;
     }
 
     public String getName() {

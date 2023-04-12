@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * a simple Singleton class for Repository, that has the basic CRUD operations with the help of an ID, that takes care of Users
+ */
+
 public class UserRepositoryMemory implements UserRepository {
 
     private static UserRepositoryMemory single_instance = null;

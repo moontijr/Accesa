@@ -3,6 +3,10 @@ package org.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * a simple User class, that has information such as id, name , email, password,number of tokens, and a list of badges, for each user to enter our app
+ */
+
 public class User {
     private String id;
     private String name;

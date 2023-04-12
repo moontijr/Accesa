@@ -10,6 +10,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * a simple Singleton class for Repository, that has the basic CRUD operations with the help of an ID, that takes care of Badges
+ */
 public class BadgeRepositoryMemory implements BadgeRepository {
     private static BadgeRepositoryMemory single_instance=null;
 
@@ -42,7 +45,6 @@ public class BadgeRepositoryMemory implements BadgeRepository {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        //BadgeRepositoryMemory.getInstance().add(new Badge("B1","Badge1", Badge.Type.BRONZE));
     }
     @Override
     public void add(Badge entity) {

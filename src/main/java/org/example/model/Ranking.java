@@ -2,6 +2,10 @@ package org.example.model;
 
 import java.util.List;
 
+/**
+ * a small ranking class to use for the ranking system
+ */
+
 public class Ranking {
 
     private String id;
@@ -12,8 +16,7 @@ public class Ranking {
         this.users = users;
     }
 
-    public int getSize()
-    {
+    public int getSize() {
         return users.size();
     }
 

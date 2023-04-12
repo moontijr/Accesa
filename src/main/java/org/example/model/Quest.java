@@ -1,5 +1,8 @@
 package org.example.model;
 
+/**
+ * A simple Quest class, each quest has an id, a specific name, and a number of points that you gain after you complete the quest
+ */
 public class Quest {
     private String id;
     private String name;
@@ -17,7 +20,7 @@ public class Quest {
     public Quest(String id, String name, int points) {
         this.id = id;
         this.name = name;
-        this.points=points;
+        this.points = points;
     }
 
     public String getId() {
