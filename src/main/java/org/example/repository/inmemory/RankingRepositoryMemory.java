@@ -12,6 +12,12 @@ public class RankingRepositoryMemory implements RankingRepository {
 
     private final ArrayList <Ranking> rankings = new ArrayList<>();
 
+    public Ranking getRanking() {
+        return ranking;
+    }
+
+    private static final Ranking ranking=new Ranking(new ArrayList<User>(),"r1");
+
     public static RankingRepositoryMemory getInstance(){
         if (single_instance == null)
         {
@@ -23,6 +29,12 @@ public class RankingRepositoryMemory implements RankingRepository {
 
     private static void populate(){
         RankingRepositoryMemory.getInstance().add(new Ranking(new ArrayList<User>(),"R1"));
+//        ranking.getUsers().add(new User("U1","User","user","1234"));
+        for (User user : UserRepositoryMemory.getInstance().getUsers())
+        {
+            ranking.getUsers().add(user);
+        }
+
     }
     @Override
     public void add(Ranking entity) {

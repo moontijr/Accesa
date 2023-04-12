@@ -5,11 +5,16 @@ import java.util.List;
 public class Ranking {
 
     private String id;
-    private List <User> users;
+    private List<User> users;
 
     public Ranking(List<User> users, String id) {
-        this.id=id;
+        this.id = id;
         this.users = users;
+    }
+
+    public int getSize()
+    {
+        return users.size();
     }
 
     public String getId() {

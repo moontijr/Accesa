@@ -1,12 +1,15 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String id;
     private String name;
     private String email;
     private String password;
     private int numberTokens;
-    private Badge[] badges;
+    private List <Badge> badges = new ArrayList<>();
 
     public User(String id, String name, String email, String password) {
         this.id = id;
@@ -55,11 +58,16 @@ public class User {
         this.numberTokens = numberTokens;
     }
 
-    public Badge[] getBadges() {
+    public void addBadge(Badge badge)
+    {
+        this.badges.add(badge);
+    }
+
+    public List<Badge> getBadges() {
         return badges;
     }
 
-    public void setBadges(Badge[] badges) {
+    public void setBadges(List<Badge> badges) {
         this.badges = badges;
     }
 }

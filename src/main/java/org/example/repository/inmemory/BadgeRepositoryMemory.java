@@ -1,8 +1,13 @@
 package org.example.repository.inmemory;
 
 import org.example.model.Badge;
+import org.example.model.User;
 import org.example.repository.BadgeRepository;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class BadgeRepositoryMemory implements BadgeRepository {
@@ -22,7 +27,22 @@ public class BadgeRepositoryMemory implements BadgeRepository {
 
     private static void populate()
     {
-        BadgeRepositoryMemory.getInstance().add(new Badge("B1","Badge1", Badge.Type.BRONZE));
+        String csvFile = "C:\\Users\\munte\\IdeaProjects\\Accesa\\src\\main\\java\\org\\example\\files\\badges.csv";
+        String line = "";
+        String cvsSplitBy=",";
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(csvFile))) {
+            while((line = bufferedReader.readLine()) != null)
+            {
+                String[] fields = line.split(cvsSplitBy);
+                Badge badge = new Badge(fields[0],fields[1], Badge.Type.valueOf(fields[2]));
+                BadgeRepositoryMemory.getInstance().add(badge);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //BadgeRepositoryMemory.getInstance().add(new Badge("B1","Badge1", Badge.Type.BRONZE));
     }
     @Override
     public void add(Badge entity) {
@@ -50,5 +70,9 @@ public class BadgeRepositoryMemory implements BadgeRepository {
             if(s.equals(badge.getId()))
                 return badge;
         return null;
+    }
+
+    public ArrayList<Badge> getBadges() {
+        return badges;
     }
 }
